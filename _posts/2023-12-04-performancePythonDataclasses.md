@@ -17,7 +17,7 @@ My big takeaway is performance differences are very small, i.e. not large enough
 
 To measure performance, I used the `timeit` module. As per `timeit`'s documents, I measured the performance using `timeit.repeat(number=1_000_000, repeat=5)`, taking the minimum value of the 5 runs. 
 
-I started by defining a basic class `Inventory` which has three fields: `item`, `price`, `quantity`. I keep the type annonation blank, as defining more generic types (think `Any`) are a potential performance improvement. Note, this performance investigation is focused on this simple non-nested class. There is a [comment](https://docs.pydantic.dev/latest/concepts/models/#creating-models-without-validation) in the pydantic documents that `init` is faster than `model_construct` for simpler versus more complex classes. Thus, I don't suggest these results are *generically* true. 
+I started by defining a basic class `Inventory` which has three fields: `item`, `price`, `quantity`. I keep the type annotation blank, as defining more generic types (think `Any`) are a potential performance improvement. Note, this performance investigation is focused on this simple non-nested class. There is a [comment](https://docs.pydantic.dev/latest/concepts/models/#creating-models-without-validation) in the pydantic documents that `init` is faster than `model_construct` for simpler versus more complex classes. Thus, I don't suggest these results are *generically* true. 
 
 ```python
 class InventoryAttrs:
@@ -183,7 +183,7 @@ pydantic_datetime = time_experiment(stmt="InventoryPydanticDatetime(item='banana
 pydantic_date = time_experiment(stmt="InventoryPydanticDate(item='banana', price=1.99, quantity=10, date=datetime.date(year=2023, month=10, day=1))")
 ```
 
-We see that `pydantic` is signficantly slower with datetime. This was actually discussed in one of the [blog posts](https://stefan.sofa-rockers.org/2020/05/29/attrs-dataclasses-pydantic/) mentioned up top. `pydantic` uses it's own home rolled date time validation. 
+We see that `pydantic` is significantly slower with datetime. This was actually discussed in one of the [blog posts](https://stefan.sofa-rockers.org/2020/05/29/attrs-dataclasses-pydantic/) mentioned up top. `pydantic` uses it's own home rolled date time validation. 
 
 <center>
     <img src="../posts_images/2023-12-04-performancePythonDataclasses/datetimeExperiments.png" class="center" width="500" height="300">
