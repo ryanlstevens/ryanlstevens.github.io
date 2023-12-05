@@ -1,6 +1,7 @@
 ---
 layout : post
 title : Measuring Performance Differences Between pydantic, dataclass, attrs
+photo : rocketShip.png
 ---
 
 # Intro and Takeaways
