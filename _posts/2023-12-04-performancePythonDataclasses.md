@@ -6,16 +6,16 @@ photo : rocketShip.png
 
 # Intro and Takeaways
 
-I recently got interested in performance differences between the different data class libraries in Python: `dataclass`, `attrs`, and `pydantic`. What started as a simple investigation quickly spiralled into many interesting dimensions. This post is heavily influenced by two awesome posts investigating a similar question:
+I recently started investigating performance differences between the different data class libraries in Python: `dataclass`, `attrs`, and `pydantic`.This simple investigation quickly spiralled into many different threads. I wrote this post partially to rein in the chaso, and partially to better understand the landscape. This post is not new ground, and is heavily influenced by two great posts investigating a similar question:
 
 * [Why I Use Attrs Instead of Pydantic](https://threeofwands.com/why-i-use-attrs-instead-of-pydantic/), by [Tin Tvrtkovic](https://threeofwands.com/)
 * [Attrs, Dataclasses and Pydantic](https://stefan.sofa-rockers.org/2020/05/29/attrs-dataclasses-pydantic/), by [Stefan Scherfke](https://stefan.sofa-rockers.org/about/)
 
-My big takeaway is that the performance differences are very small, i.e. not large enough that one should choose one package over another based on performance. If you really want the fastest performance, use either `attrs` or `dataclass` without validation using only `positional` argument calls. The only significant slow down is using `datetime.datetime` or `datetime.date` objects in `pydantic`. I don't want to wholly recommend against it, but it does seem like an area one should be specifically careful about if performance is an upmost concern. 
+My big takeaway is performance differences are very small, i.e. not large enough that one should choose one package over another based on performance. If you really want the fastest performance, use either `attrs` or `dataclass` without validation using only `positional` argument calls. The only significant slow down is using `datetime.datetime` or `datetime.date` objects in `pydantic`. I don't want to wholly recommend against it, but if performance is an utmost concern then one should investigate further when using `datetime` objects. 
 
 # Experimental Setup and Measurement
 
-To measure performance, I used the `timeit` module. As per the documents, I measured the performance using `timeit.repeat(number=1_000_000, repeat=5)`, taking the minimum value of the 5 runs. 
+To measure performance, I used the `timeit` module. As per `timeit`'s documents, I measured the performance using `timeit.repeat(number=1_000_000, repeat=5)`, taking the minimum value of the 5 runs. 
 
 I started by defining a basic class `Inventory` which has three fields: `item`, `price`, `quantity`. I keep the type annonation blank, as defining more generic types (think `Any`) are a potential performance improvement. Note, this performance investigation is focused on this simple non-nested class. There is a [comment](https://docs.pydantic.dev/latest/concepts/models/#creating-models-without-validation) in the pydantic documents that `init` is faster than `model_construct` for simpler versus more complex classes. Thus, I don't suggest these results are *generically* true. 
 
