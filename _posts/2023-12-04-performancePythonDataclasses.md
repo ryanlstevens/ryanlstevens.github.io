@@ -6,7 +6,7 @@ photo : rocketShip.png
 
 # Intro and Takeaways
 
-I recently started investigating performance differences between the different data class libraries in Python: `dataclass`, `attrs`, and `pydantic`.This simple investigation quickly spiralled into many different threads. I wrote this post partially to rein in the chaso, and partially to better understand the landscape. This post is not new ground, and is heavily influenced by two great posts investigating a similar question:
+I recently started investigating performance differences between the different data class libraries in Python: `dataclass`, `attrs`, and `pydantic`.This simple investigation quickly spiralled into many different threads. I wrote this post partly to rein in the chaos, and partly to better understand the data class landscape. This post is not new ground, and is heavily influenced by two great posts investigating a similar question:
 
 * [Why I Use Attrs Instead of Pydantic](https://threeofwands.com/why-i-use-attrs-instead-of-pydantic/), by [Tin Tvrtkovic](https://threeofwands.com/)
 * [Attrs, Dataclasses and Pydantic](https://stefan.sofa-rockers.org/2020/05/29/attrs-dataclasses-pydantic/), by [Stefan Scherfke](https://stefan.sofa-rockers.org/about/)
