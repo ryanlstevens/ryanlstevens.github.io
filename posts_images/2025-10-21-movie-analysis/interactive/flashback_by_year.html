@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "data": {"name": "data-a76925be191de1e687bd0878f0d3d8ee"}, "mark": {"type": "bar", "color": "#72b7b2", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "flashback_count", "title": "Flashback Episodes", "type": "quantitative"}, {"field": "total_episodes", "title": "Episodes with Descriptions", "type": "quantitative"}, {"field": "flashback_percentage", "format": ".1f", "title": "Flashback %", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "flashback_percentage", "title": "% Episodes with Flashbacks", "type": "quantitative"}}, "height": 350, "title": {"text": "Flashback Episode Usage Over Time", "fontSize": 18, "subtitle": "Percentage of episodes where majority is flashback content"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-a76925be191de1e687bd0878f0d3d8ee": [{"year": 1995.0, "total_episodes": 176, "flashback_count": 3, "flashback_percentage": 1.7045454545454544}, {"year": 1996.0, "total_episodes": 170, "flashback_count": 3, "flashback_percentage": 1.7647058823529411}, {"year": 1997.0, "total_episodes": 241, "flashback_count": 5, "flashback_percentage": 2.0746887966804977}, {"year": 1998.0, "total_episodes": 264, "flashback_count": 2, "flashback_percentage": 0.7575757575757576}, {"year": 1999.0, "total_episodes": 241, "flashback_count": 3, "flashback_percentage": 1.2448132780082988}, {"year": 2000.0, "total_episodes": 295, "flashback_count": 3, "flashback_percentage": 1.0169491525423728}, {"year": 2001.0, "total_episodes": 316, "flashback_count": 9, "flashback_percentage": 2.848101265822785}, {"year": 2002.0, "total_episodes": 372, "flashback_count": 5, "flashback_percentage": 1.3440860215053763}, {"year": 2003.0, "total_episodes": 304, "flashback_count": 8, "flashback_percentage": 2.631578947368421}, {"year": 2004.0, "total_episodes": 318, "flashback_count": 7, "flashback_percentage": 2.20125786163522}, {"year": 2005.0, "total_episodes": 394, "flashback_count": 3, "flashback_percentage": 0.7614213197969544}, {"year": 2006.0, "total_episodes": 432, "flashback_count": 13, "flashback_percentage": 3.009259259259259}, {"year": 2007.0, "total_episodes": 387, "flashback_count": 10, "flashback_percentage": 2.5839793281653747}, {"year": 2008.0, "total_episodes": 359, "flashback_count": 10, "flashback_percentage": 2.785515320334262}, {"year": 2009.0, "total_episodes": 346, "flashback_count": 3, "flashback_percentage": 0.8670520231213872}, {"year": 2010.0, "total_episodes": 409, "flashback_count": 9, "flashback_percentage": 2.2004889975550124}, {"year": 2011.0, "total_episodes": 398, "flashback_count": 18, "flashback_percentage": 4.522613065326634}, {"year": 2012.0, "total_episodes": 380, "flashback_count": 7, "flashback_percentage": 1.8421052631578945}, {"year": 2013.0, "total_episodes": 392, "flashback_count": 16, "flashback_percentage": 4.081632653061225}, {"year": 2014.0, "total_episodes": 385, "flashback_count": 18, "flashback_percentage": 4.675324675324675}, {"year": 2015.0, "total_episodes": 328, "flashback_count": 17, "flashback_percentage": 5.182926829268292}, {"year": 2016.0, "total_episodes": 318, "flashback_count": 14, "flashback_percentage": 4.40251572327044}, {"year": 2017.0, "total_episodes": 363, "flashback_count": 33, "flashback_percentage": 9.090909090909092}, {"year": 2018.0, "total_episodes": 313, "flashback_count": 27, "flashback_percentage": 8.626198083067091}, {"year": 2019.0, "total_episodes": 368, "flashback_count": 29, "flashback_percentage": 7.880434782608696}, {"year": 2020.0, "total_episodes": 287, "flashback_count": 31, "flashback_percentage": 10.801393728222997}, {"year": 2021.0, "total_episodes": 285, "flashback_count": 16, "flashback_percentage": 5.614035087719298}, {"year": 2022.0, "total_episodes": 308, "flashback_count": 20, "flashback_percentage": 6.493506493506493}, {"year": 2023.0, "total_episodes": 229, "flashback_count": 15, "flashback_percentage": 6.550218340611353}, {"year": 2024.0, "total_episodes": 180, "flashback_count": 13, "flashback_percentage": 7.222222222222221}, {"year": 2025.0, "total_episodes": 234, "flashback_count": 20, "flashback_percentage": 8.547008547008547}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

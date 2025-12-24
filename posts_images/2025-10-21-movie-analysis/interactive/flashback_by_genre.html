@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "data": {"name": "data-c41ef22ed39f3fc096741a4e19416229"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "genre", "legend": null, "scale": {"domain": ["Thriller", "Drama", "Fantasy", "Sci-Fi", "Other", "Action", "Dark Comedy", "Crime", "Animation", "Comedy-Drama", "Comedy"], "range": ["#4c78a8", "#f58518", "#e45756", "#72b7b2", "#54a24b", "#b279a2", "#ff9da6", "#9c755f", "#bab0ac", "#d67195", "#cccccc"]}, "type": "nominal"}, "tooltip": [{"field": "genre", "title": "Genre", "type": "nominal"}, {"field": "total_episodes", "format": ".0f", "title": "Total Episodes", "type": "quantitative"}, {"field": "flashback_count", "format": ".1f", "title": "Flashback Episodes", "type": "quantitative"}, {"field": "flashback_percentage", "format": ".1f", "title": "Flashback %", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "genre", "sort": ["Thriller", "Drama", "Fantasy", "Sci-Fi", "Other", "Action", "Dark Comedy", "Crime", "Animation", "Comedy-Drama", "Comedy"], "title": "Genre", "type": "nominal"}, "y": {"field": "flashback_percentage", "title": "% Episodes with Flashbacks", "type": "quantitative"}}, "height": 400, "title": {"text": "Flashback Episodes by Genre", "fontSize": 18, "subtitle": "Percentage of episodes containing flashbacks by genre (weighted for multi-genre shows)"}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-c41ef22ed39f3fc096741a4e19416229": [{"genre": "Thriller", "total_episodes": 446.9642857142857, "flashback_count": 37.642857142857146, "flashback_percentage": 8.421893727526967}, {"genre": "Drama", "total_episodes": 859.2809523809524, "flashback_count": 53.27619047619048, "flashback_percentage": 6.20008977605861}, {"genre": "Fantasy", "total_episodes": 310.76666666666665, "flashback_count": 17.116666666666667, "flashback_percentage": 5.507883728413601}, {"genre": "Sci-Fi", "total_episodes": 851.6476190476191, "flashback_count": 44.05952380952381, "flashback_percentage": 5.17344531049059}, {"genre": "Other", "total_episodes": 2412.045238095238, "flashback_count": 99.70238095238095, "flashback_percentage": 4.133520357649456}, {"genre": "Action", "total_episodes": 504.05, "flashback_count": 20.366666666666667, "flashback_percentage": 4.040604437390471}, {"genre": "Dark Comedy", "total_episodes": 639.297619047619, "flashback_count": 23.50952380952381, "flashback_percentage": 3.6773989311186015}, {"genre": "Crime", "total_episodes": 554.95, "flashback_count": 19.933333333333334, "flashback_percentage": 3.5919151875544344}, {"genre": "Animation", "total_episodes": 170.31666666666666, "flashback_count": 5.583333333333333, "flashback_percentage": 3.278207260984441}, {"genre": "Comedy-Drama", "total_episodes": 948.1309523809524, "flashback_count": 24.609523809523807, "flashback_percentage": 2.5955827881923077}, {"genre": "Comedy", "total_episodes": 1356.55, "flashback_count": 24.2, "flashback_percentage": 1.7839371936161585}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
