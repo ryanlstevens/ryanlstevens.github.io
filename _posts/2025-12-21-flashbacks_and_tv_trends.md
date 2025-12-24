@@ -1,6 +1,6 @@
 ---
 layout : post
-title : Stuck in the Past: Why Are TV Shows Obsessed with Flashbacks?
+title : "Stuck in the Past: Why Are TV Shows Obsessed with Flashbacks?"
 ---
 
 # Introduction
