@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "layer": [{"mark": {"type": "line", "color": "#4c78a8", "strokeWidth": 3}, "encoding": {"x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "median_episodes", "scale": {"domain": [0, 16]}, "title": "Median Episodes per Season", "type": "quantitative"}}}, {"mark": {"type": "circle", "color": "#4c78a8", "size": 80}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "median_episodes", "title": "Median Episodes", "type": "quantitative"}, {"field": "season_count", "title": "Seasons", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "median_episodes", "type": "quantitative"}}}], "data": {"name": "data-2e7eb3ed340b8849a6572e32b9c73303"}, "height": 350, "title": {"text": "Median Episodes per Season Over Time", "fontSize": 18, "subtitle": "Shows trending toward shorter seasons"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-2e7eb3ed340b8849a6572e32b9c73303": [{"year": 1995.0, "avg_episodes": 62.5, "median_episodes": 13.0, "season_count": 34}, {"year": 1996.0, "avg_episodes": 16.757575757575758, "median_episodes": 13.0, "season_count": 33}, {"year": 1997.0, "avg_episodes": 15.6, "median_episodes": 13.0, "season_count": 35}, {"year": 1998.0, "avg_episodes": 66.25, "median_episodes": 13.0, "season_count": 36}, {"year": 1999.0, "avg_episodes": 14.35, "median_episodes": 13.0, "season_count": 40}, {"year": 2000.0, "avg_episodes": 15.15, "median_episodes": 13.0, "season_count": 40}, {"year": 2001.0, "avg_episodes": 15.133333333333333, "median_episodes": 13.0, "season_count": 45}, {"year": 2002.0, "avg_episodes": 79.12765957446808, "median_episodes": 13.0, "season_count": 47}, {"year": 2003.0, "avg_episodes": 14.761904761904763, "median_episodes": 12.5, "season_count": 42}, {"year": 2004.0, "avg_episodes": 15.113636363636363, "median_episodes": 12.5, "season_count": 44}, {"year": 2005.0, "avg_episodes": 14.327272727272728, "median_episodes": 12.0, "season_count": 55}, {"year": 2006.0, "avg_episodes": 88.42857142857143, "median_episodes": 13.0, "season_count": 63}, {"year": 2007.0, "avg_episodes": 15.416666666666666, "median_episodes": 12.5, "season_count": 60}, {"year": 2008.0, "avg_episodes": 12.88135593220339, "median_episodes": 13.0, "season_count": 59}, {"year": 2009.0, "avg_episodes": 49.98461538461538, "median_episodes": 12.0, "season_count": 65}, {"year": 2010.0, "avg_episodes": 39.41428571428571, "median_episodes": 13.0, "season_count": 70}, {"year": 2011.0, "avg_episodes": 42.3768115942029, "median_episodes": 12.0, "season_count": 69}, {"year": 2012.0, "avg_episodes": 30.785714285714285, "median_episodes": 13.0, "season_count": 70}, {"year": 2013.0, "avg_episodes": 14.942028985507246, "median_episodes": 13.0, "season_count": 69}, {"year": 2014.0, "avg_episodes": 30.130434782608695, "median_episodes": 12.0, "season_count": 69}, {"year": 2015.0, "avg_episodes": 13.8, "median_episodes": 12.0, "season_count": 60}, {"year": 2016.0, "avg_episodes": 13.446428571428571, "median_episodes": 10.0, "season_count": 56}, {"year": 2017.0, "avg_episodes": 12.538461538461538, "median_episodes": 10.0, "season_count": 65}, {"year": 2018.0, "avg_episodes": 12.557692307692308, "median_episodes": 10.0, "season_count": 52}, {"year": 2019.0, "avg_episodes": 11.15, "median_episodes": 9.5, "season_count": 60}, {"year": 2020.0, "avg_episodes": 10.813953488372093, "median_episodes": 10.0, "season_count": 43}, {"year": 2021.0, "avg_episodes": 10.702702702702704, "median_episodes": 10.0, "season_count": 37}, {"year": 2022.0, "avg_episodes": 10.068181818181818, "median_episodes": 9.0, "season_count": 44}, {"year": 2023.0, "avg_episodes": 10.0, "median_episodes": 9.5, "season_count": 36}, {"year": 2024.0, "avg_episodes": 9.192307692307692, "median_episodes": 8.5, "season_count": 26}, {"year": 2025.0, "avg_episodes": 9.594594594594595, "median_episodes": 10.0, "season_count": 37}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "layer": [{"mark": {"type": "area", "color": {"gradient": "linear", "stops": [{"color": "#f8d7d5", "offset": 0}, {"color": "#e45756", "offset": 1}], "x1": 1, "x2": 1, "y1": 1, "y2": 0}, "line": {"color": "#e45756"}, "opacity": 0.7}, "encoding": {"x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "top3_percentage", "scale": {"domain": [0, 100]}, "title": "% of Shows in Top 3 Networks", "type": "quantitative"}}}, {"mark": {"type": "circle", "color": "#e45756", "size": 80}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "top3_networks", "title": "Top 3 Networks", "type": "nominal"}, {"field": "top3_percentage", "format": ".1f", "title": "Top 3 %", "type": "quantitative"}, {"field": "total_shows", "title": "Total Shows", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "top3_percentage", "type": "quantitative"}}}], "data": {"name": "data-2acae26733c3c1cb86fdb69f4fe2ca45"}, "height": 350, "title": {"text": "Market Concentration: Top 3 Networks Share Over Time", "fontSize": 18, "subtitle": "How concentrated is the TV market among top players?"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-2acae26733c3c1cb86fdb69f4fe2ca45": [{"year": 1995.0, "total_shows": 23, "top3_shows": 14, "top3_percentage": 60.86956521739131, "top3_networks": "NBC, Fox, HBO"}, {"year": 1996.0, "total_shows": 22, "top3_shows": 13, "top3_percentage": 59.09090909090909, "top3_networks": "NBC, HBO, Cartoon Network"}, {"year": 1997.0, "total_shows": 24, "top3_shows": 13, "top3_percentage": 54.166666666666664, "top3_networks": "NBC, HBO, Fox"}, {"year": 1998.0, "total_shows": 25, "top3_shows": 15, "top3_percentage": 60.0, "top3_networks": "NBC, HBO, Fox"}, {"year": 1999.0, "total_shows": 30, "top3_shows": 16, "top3_percentage": 53.333333333333336, "top3_networks": "NBC, Fox, HBO"}, {"year": 2000.0, "total_shows": 29, "top3_shows": 16, "top3_percentage": 55.172413793103445, "top3_networks": "NBC, Fox, HBO"}, {"year": 2001.0, "total_shows": 35, "top3_shows": 20, "top3_percentage": 57.14285714285714, "top3_networks": "NBC, Fox, HBO"}, {"year": 2002.0, "total_shows": 34, "top3_shows": 18, "top3_percentage": 52.94117647058824, "top3_networks": "Fox, NBC, HBO"}, {"year": 2003.0, "total_shows": 35, "top3_shows": 17, "top3_percentage": 48.57142857142857, "top3_networks": "NBC, Fox, HBO"}, {"year": 2004.0, "total_shows": 38, "top3_shows": 17, "top3_percentage": 44.73684210526316, "top3_networks": "HBO, NBC, Fox"}, {"year": 2005.0, "total_shows": 40, "top3_shows": 18, "top3_percentage": 45.0, "top3_networks": "Fox, HBO, ABC"}, {"year": 2006.0, "total_shows": 45, "top3_shows": 21, "top3_percentage": 46.666666666666664, "top3_networks": "NBC, Fox, ABC"}, {"year": 2007.0, "total_shows": 44, "top3_shows": 19, "top3_percentage": 43.18181818181818, "top3_networks": "NBC, ABC, CBS"}, {"year": 2008.0, "total_shows": 48, "top3_shows": 20, "top3_percentage": 41.66666666666667, "top3_networks": "NBC, CBS, Fox"}, {"year": 2009.0, "total_shows": 46, "top3_shows": 21, "top3_percentage": 45.65217391304348, "top3_networks": "NBC, CBS, Fox"}, {"year": 2010.0, "total_shows": 53, "top3_shows": 21, "top3_percentage": 39.62264150943396, "top3_networks": "NBC, Fox, CBS"}, {"year": 2011.0, "total_shows": 50, "top3_shows": 18, "top3_percentage": 36.0, "top3_networks": "CBS, NBC, FX"}, {"year": 2012.0, "total_shows": 55, "top3_shows": 19, "top3_percentage": 34.54545454545455, "top3_networks": "CBS, Fox, HBO"}, {"year": 2013.0, "total_shows": 53, "top3_shows": 19, "top3_percentage": 35.84905660377358, "top3_networks": "CBS, HBO, NBC"}, {"year": 2014.0, "total_shows": 56, "top3_shows": 22, "top3_percentage": 39.285714285714285, "top3_networks": "HBO, CBS, FX"}, {"year": 2015.0, "total_shows": 51, "top3_shows": 19, "top3_percentage": 37.254901960784316, "top3_networks": "HBO, CBS, FX"}, {"year": 2016.0, "total_shows": 47, "top3_shows": 18, "top3_percentage": 38.297872340425535, "top3_networks": "Netflix, HBO, FX"}, {"year": 2017.0, "total_shows": 56, "top3_shows": 21, "top3_percentage": 37.5, "top3_networks": "Netflix, HBO, FX"}, {"year": 2018.0, "total_shows": 48, "top3_shows": 16, "top3_percentage": 33.33333333333333, "top3_networks": "Netflix, HBO, FX"}, {"year": 2019.0, "total_shows": 60, "top3_shows": 26, "top3_percentage": 43.333333333333336, "top3_networks": "HBO, Netflix, Amazon Prime Video"}, {"year": 2020.0, "total_shows": 53, "top3_shows": 20, "top3_percentage": 37.735849056603776, "top3_networks": "Netflix, NBC, HBO"}, {"year": 2021.0, "total_shows": 49, "top3_shows": 15, "top3_percentage": 30.612244897959183, "top3_networks": "Amazon Prime Video, HBO, Netflix"}, {"year": 2022.0, "total_shows": 49, "top3_shows": 18, "top3_percentage": 36.734693877551024, "top3_networks": "Amazon Prime Video, Netflix, HBO"}, {"year": 2023.0, "total_shows": 45, "top3_shows": 18, "top3_percentage": 40.0, "top3_networks": "Amazon Prime Video, Netflix, Apple TV+"}, {"year": 2024.0, "total_shows": 35, "top3_shows": 18, "top3_percentage": 51.42857142857142, "top3_networks": "Amazon Prime Video, HBO, Netflix"}, {"year": 2025.0, "total_shows": 40, "top3_shows": 19, "top3_percentage": 47.5, "top3_networks": "Amazon Prime Video, Netflix, Apple TV+"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "data": {"name": "data-cc5295668f464d374fe31595b1d4d30d"}, "mark": {"type": "bar", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4}, "encoding": {"color": {"field": "network", "legend": null, "scale": {"scheme": "tableau20"}, "type": "nominal"}, "tooltip": [{"field": "network", "title": "Network", "type": "nominal"}, {"field": "show_count", "title": "Shows", "type": "quantitative"}, {"field": "percentage", "format": ".1f", "title": "Percentage", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "network", "sort": "-y", "title": "Network", "type": "nominal"}, "y": {"field": "percentage", "title": "% of Shows", "type": "quantitative"}}, "height": 350, "title": {"text": "Distribution of Shows by Network", "fontSize": 18, "subtitle": "HBO and Netflix dominate the premium TV landscape"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-cc5295668f464d374fe31595b1d4d30d": [{"network": "HBO", "show_count": 43, "percentage": 18.29787234042553}, {"network": "Netflix", "show_count": 26, "percentage": 11.063829787234042}, {"network": "NBC", "show_count": 24, "percentage": 10.212765957446807}, {"network": "Amazon Prime Video", "show_count": 15, "percentage": 6.382978723404255}, {"network": "Fox", "show_count": 14, "percentage": 5.957446808510639}, {"network": "FX", "show_count": 11, "percentage": 4.680851063829787}, {"network": "ABC", "show_count": 10, "percentage": 4.25531914893617}, {"network": "Showtime", "show_count": 9, "percentage": 3.829787234042553}, {"network": "CBS", "show_count": 9, "percentage": 3.829787234042553}, {"network": "Cartoon Network", "show_count": 8, "percentage": 3.404255319148936}, {"network": "Apple TV+", "show_count": 7, "percentage": 2.9787234042553195}, {"network": "Hulu", "show_count": 5, "percentage": 2.127659574468085}, {"network": "TBS", "show_count": 5, "percentage": 2.127659574468085}, {"network": "USA Network", "show_count": 5, "percentage": 2.127659574468085}, {"network": "AMC", "show_count": 4, "percentage": 1.702127659574468}, {"network": "Other", "show_count": 40, "percentage": 17.02127659574468}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

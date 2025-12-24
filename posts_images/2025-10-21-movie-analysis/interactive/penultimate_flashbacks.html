@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "data": {"name": "data-09fca6e57d4c8781a5bf23c51b120e92"}, "mark": {"type": "bar", "color": "#f58518", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "flashback_penultimate", "title": "Penultimate Flashbacks", "type": "quantitative"}, {"field": "total_penultimate", "title": "Total Seasons", "type": "quantitative"}, {"field": "penultimate_flashback_pct", "format": ".1f", "title": "Percentage", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "penultimate_flashback_pct", "title": "% Seasons with Penultimate Flashback", "type": "quantitative"}}, "height": 350, "title": {"text": "Penultimate Episode Flashbacks by Year", "fontSize": 18, "subtitle": "% of seasons where the second-to-last episode is a flashback"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-09fca6e57d4c8781a5bf23c51b120e92": [{"year": 1995.0, "total_penultimate": 17, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 5.88235294117647}, {"year": 1996.0, "total_penultimate": 18, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 1997.0, "total_penultimate": 19, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 1998.0, "total_penultimate": 19, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 1999.0, "total_penultimate": 23, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2000.0, "total_penultimate": 23, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2001.0, "total_penultimate": 23, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 4.3478260869565215}, {"year": 2002.0, "total_penultimate": 29, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2003.0, "total_penultimate": 23, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2004.0, "total_penultimate": 28, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 3.571428571428571}, {"year": 2005.0, "total_penultimate": 30, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2006.0, "total_penultimate": 36, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2007.0, "total_penultimate": 39, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2008.0, "total_penultimate": 37, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 2.7027027027027026}, {"year": 2009.0, "total_penultimate": 38, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 2.631578947368421}, {"year": 2010.0, "total_penultimate": 44, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2011.0, "total_penultimate": 42, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2012.0, "total_penultimate": 48, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2013.0, "total_penultimate": 49, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 2.0408163265306123}, {"year": 2014.0, "total_penultimate": 49, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2015.0, "total_penultimate": 46, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2016.0, "total_penultimate": 41, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 2.4390243902439024}, {"year": 2017.0, "total_penultimate": 50, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 2.0}, {"year": 2018.0, "total_penultimate": 37, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2019.0, "total_penultimate": 47, "flashback_penultimate": 2.0, "penultimate_flashback_pct": 4.25531914893617}, {"year": 2020.0, "total_penultimate": 34, "flashback_penultimate": 3.0, "penultimate_flashback_pct": 8.823529411764707}, {"year": 2021.0, "total_penultimate": 30, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2022.0, "total_penultimate": 40, "flashback_penultimate": 1.0, "penultimate_flashback_pct": 2.5}, {"year": 2023.0, "total_penultimate": 30, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2024.0, "total_penultimate": 21, "flashback_penultimate": 0.0, "penultimate_flashback_pct": 0.0}, {"year": 2025.0, "total_penultimate": 36, "flashback_penultimate": 2.0, "penultimate_flashback_pct": 5.555555555555555}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

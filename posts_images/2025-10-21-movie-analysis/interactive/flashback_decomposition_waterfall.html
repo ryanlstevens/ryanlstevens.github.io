@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 10, "titleFontSize": 12}}, "layer": [{"mark": {"type": "bar", "size": 40}, "encoding": {"color": {"field": "color", "legend": null, "scale": {"domain": ["endpoint", "composition", "composition_neg", "rate", "rate_neg", "interaction", "interaction_neg", "residual"], "range": ["#4c78a8", "#72b7b2", "#e45756", "#54a24b", "#ff9da6", "#f58518", "#b279a2", "#9c755f"]}, "type": "nominal"}, "x": {"axis": {"labelAngle": -45, "labelLimit": 100}, "field": "step", "sort": ["2012", "Genre mix", "Network mix", "Genre rate", "Network rate", "Interaction", "Unexplained", "2025"], "title": null, "type": "nominal"}, "y": {"field": "start", "title": "Flashback Rate (%)", "type": "quantitative"}, "y2": {"field": "end"}}}, {"mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -5, "fontSize": 10}, "encoding": {"text": {"field": "value", "format": "+.2f", "type": "quantitative"}, "x": {"field": "step", "sort": ["2012", "Genre mix", "Network mix", "Genre rate", "Network rate", "Interaction", "Unexplained", "2025"], "type": "nominal"}, "y": {"field": "end", "type": "quantitative"}}, "transform": [{"filter": "(datum.type === 'change')"}]}, {"mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -5, "fontSize": 10, "fontWeight": "bold"}, "encoding": {"text": {"field": "value", "format": ".2f", "type": "quantitative"}, "x": {"field": "step", "sort": ["2012", "Genre mix", "Network mix", "Genre rate", "Network rate", "Interaction", "Unexplained", "2025"], "type": "nominal"}, "y": {"field": "end", "type": "quantitative"}}, "transform": [{"filter": "((datum.type === 'start') || (datum.type === 'end'))"}]}], "data": {"name": "data-de837342bb6cb57dc60e86fbc9b78f00"}, "height": 380, "title": {"text": "Decomposing Factors behind Changes in Flashback Rate (2012 \u2192 2025)", "fontSize": 14, "subtitle": "Teal/Red=composition, Green/Pink=rate, Orange=interaction, Brown=unexplained"}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-de837342bb6cb57dc60e86fbc9b78f00": [{"step": "2012", "value": 2.052785923753666, "type": "start", "category": "endpoint", "start": 0.0, "end": 2.052785923753666, "order": 0, "color": "endpoint"}, {"step": "Genre mix", "value": 0.33117862075989773, "type": "change", "category": "composition", "start": 2.052785923753666, "end": 2.3839645445135638, "order": 1, "color": "composition"}, {"step": "Network mix", "value": -1.8340764478809013, "type": "change", "category": "composition", "start": 2.3839645445135638, "end": 0.5498880966326625, "order": 2, "color": "composition_neg"}, {"step": "Genre rate", "value": 3.5302372825976978, "type": "change", "category": "rate", "start": 0.5498880966326625, "end": 4.08012537923036, "order": 3, "color": "rate"}, {"step": "Network rate", "value": -5.164087303544493, "type": "change", "category": "rate", "start": 4.08012537923036, "end": -1.0839619243141332, "order": 4, "color": "rate_neg"}, {"step": "Interaction", "value": 9.481666313859519, "type": "change", "category": "interaction", "start": -1.0839619243141332, "end": 8.397704389545385, "order": 5, "color": "interaction"}, {"step": "Unexplained", "value": -0.23443908342293573, "type": "change", "category": "residual", "start": 8.397704389545385, "end": 8.16326530612245, "order": 6, "color": "residual"}, {"step": "2025", "value": 8.16326530612245, "type": "end", "category": "endpoint", "start": 0.0, "end": 8.16326530612245, "order": 7, "color": "endpoint"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

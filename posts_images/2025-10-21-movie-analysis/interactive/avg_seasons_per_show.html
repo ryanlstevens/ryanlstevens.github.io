@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "layer": [{"mark": {"type": "line", "color": "#2ca02c", "strokeWidth": 3}, "encoding": {"x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "avg_seasons", "title": "Avg Seasons Aired per Show (per Year)", "type": "quantitative"}}}, {"mark": {"type": "circle", "color": "#2ca02c", "size": 80}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "avg_seasons", "format": ".2f", "title": "Avg Seasons", "type": "quantitative"}, {"field": "median_seasons", "title": "Median Seasons", "type": "quantitative"}, {"field": "show_count", "title": "Active Shows", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "avg_seasons", "type": "quantitative"}}}], "data": {"name": "data-a40398ef7072977eb4d2d2e4af19dcf7"}, "height": 350, "title": {"text": "Average Seasons Aired per Show (per Year)", "fontSize": 18, "subtitle": "How many seasons each active show aired in a given year (usually 1)"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-a40398ef7072977eb4d2d2e4af19dcf7": [{"year": 1995.0, "avg_seasons": 1.7, "median_seasons": 2.0, "show_count": 20}, {"year": 1996.0, "avg_seasons": 1.619047619047619, "median_seasons": 2.0, "show_count": 21}, {"year": 1997.0, "avg_seasons": 1.608695652173913, "median_seasons": 2.0, "show_count": 23}, {"year": 1998.0, "avg_seasons": 1.6521739130434783, "median_seasons": 2.0, "show_count": 23}, {"year": 1999.0, "avg_seasons": 1.5555555555555556, "median_seasons": 2.0, "show_count": 27}, {"year": 2000.0, "avg_seasons": 1.5714285714285714, "median_seasons": 2.0, "show_count": 28}, {"year": 2001.0, "avg_seasons": 1.411764705882353, "median_seasons": 1.0, "show_count": 34}, {"year": 2002.0, "avg_seasons": 1.65625, "median_seasons": 2.0, "show_count": 32}, {"year": 2003.0, "avg_seasons": 1.46875, "median_seasons": 1.0, "show_count": 32}, {"year": 2004.0, "avg_seasons": 1.3333333333333333, "median_seasons": 1.0, "show_count": 36}, {"year": 2005.0, "avg_seasons": 1.5526315789473684, "median_seasons": 1.5, "show_count": 38}, {"year": 2006.0, "avg_seasons": 1.5952380952380953, "median_seasons": 1.0, "show_count": 42}, {"year": 2007.0, "avg_seasons": 1.65, "median_seasons": 2.0, "show_count": 40}, {"year": 2008.0, "avg_seasons": 1.5, "median_seasons": 1.0, "show_count": 44}, {"year": 2009.0, "avg_seasons": 1.6, "median_seasons": 2.0, "show_count": 45}, {"year": 2010.0, "avg_seasons": 1.625, "median_seasons": 2.0, "show_count": 48}, {"year": 2011.0, "avg_seasons": 1.574468085106383, "median_seasons": 2.0, "show_count": 47}, {"year": 2012.0, "avg_seasons": 1.5490196078431373, "median_seasons": 1.0, "show_count": 51}, {"year": 2013.0, "avg_seasons": 1.3653846153846154, "median_seasons": 1.0, "show_count": 52}, {"year": 2014.0, "avg_seasons": 1.3333333333333333, "median_seasons": 1.0, "show_count": 54}, {"year": 2015.0, "avg_seasons": 1.3673469387755102, "median_seasons": 1.0, "show_count": 49}, {"year": 2016.0, "avg_seasons": 1.3636363636363635, "median_seasons": 1.0, "show_count": 44}, {"year": 2017.0, "avg_seasons": 1.3653846153846154, "median_seasons": 1.0, "show_count": 52}, {"year": 2018.0, "avg_seasons": 1.4047619047619047, "median_seasons": 1.0, "show_count": 42}, {"year": 2019.0, "avg_seasons": 1.2777777777777777, "median_seasons": 1.0, "show_count": 54}, {"year": 2020.0, "avg_seasons": 1.148936170212766, "median_seasons": 1.0, "show_count": 47}, {"year": 2021.0, "avg_seasons": 1.2162162162162162, "median_seasons": 1.0, "show_count": 37}, {"year": 2022.0, "avg_seasons": 1.146341463414634, "median_seasons": 1.0, "show_count": 41}, {"year": 2023.0, "avg_seasons": 1.0512820512820513, "median_seasons": 1.0, "show_count": 39}, {"year": 2024.0, "avg_seasons": 1.1153846153846154, "median_seasons": 1.0, "show_count": 26}, {"year": 2025.0, "avg_seasons": 1.1111111111111112, "median_seasons": 1.0, "show_count": 36}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

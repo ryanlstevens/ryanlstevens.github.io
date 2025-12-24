@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}}, "layer": [{"mark": {"type": "line", "color": "#9467bd", "strokeWidth": 3}, "encoding": {"x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "median_gap_months", "scale": {"domain": [0, 18]}, "title": "Median Wait Time (Months)", "type": "quantitative"}}}, {"mark": {"type": "circle", "color": "#9467bd", "size": 80}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "median_gap_months", "format": ".1f", "title": "Median Gap (Months)", "type": "quantitative"}, {"field": "median_gap_days", "format": ".0f", "title": "Median Gap (Days)", "type": "quantitative"}, {"field": "gap_count", "title": "Season Transitions", "type": "quantitative"}], "x": {"axis": {"labelAngle": -45}, "field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "median_gap_months", "type": "quantitative"}}}], "data": {"name": "data-7a01294f4841c49cd2e68a5e3a629467"}, "height": 350, "title": {"text": "Median Wait Time Between Seasons Over Time", "fontSize": 18, "subtitle": "How long viewers wait for the next season"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-7a01294f4841c49cd2e68a5e3a629467": [{"year": 1995, "median_gap_days": 126.0, "mean_gap_days": 184.35294117647058, "gap_count": 17, "median_gap_months": 4.139290407358739}, {"year": 1996, "median_gap_days": 126.0, "mean_gap_days": 199.2, "gap_count": 15, "median_gap_months": 4.139290407358739}, {"year": 1997, "median_gap_days": 143.5, "mean_gap_days": 177.27777777777777, "gap_count": 18, "median_gap_months": 4.71419185282523}, {"year": 1998, "median_gap_days": 133.5, "mean_gap_days": 142.125, "gap_count": 16, "median_gap_months": 4.385676741130092}, {"year": 1999, "median_gap_days": 131.5, "mean_gap_days": 175.85, "gap_count": 20, "median_gap_months": 4.319973718791064}, {"year": 2000, "median_gap_days": 154.0, "mean_gap_days": 165.26315789473685, "gap_count": 19, "median_gap_months": 5.059132720105125}, {"year": 2001, "median_gap_days": 136.5, "mean_gap_days": 167.35, "gap_count": 20, "median_gap_months": 4.484231274638633}, {"year": 2002, "median_gap_days": 136.0, "mean_gap_days": 243.76666666666668, "gap_count": 30, "median_gap_months": 4.467805519053877}, {"year": 2003, "median_gap_days": 147.0, "mean_gap_days": 190.95, "gap_count": 20, "median_gap_months": 4.829172141918528}, {"year": 2004, "median_gap_days": 168.0, "mean_gap_days": 244.7826086956522, "gap_count": 23, "median_gap_months": 5.519053876478318}, {"year": 2005, "median_gap_days": 140.5, "mean_gap_days": 202.0, "gap_count": 26, "median_gap_months": 4.615637319316688}, {"year": 2006, "median_gap_days": 127.5, "mean_gap_days": 181.42857142857142, "gap_count": 28, "median_gap_months": 4.188567674113009}, {"year": 2007, "median_gap_days": 136.5, "mean_gap_days": 209.05882352941177, "gap_count": 34, "median_gap_months": 4.484231274638633}, {"year": 2008, "median_gap_days": 150.5, "mean_gap_days": 210.375, "gap_count": 32, "median_gap_months": 4.944152431011826}, {"year": 2009, "median_gap_days": 161.0, "mean_gap_days": 205.6875, "gap_count": 32, "median_gap_months": 5.289093298291721}, {"year": 2010, "median_gap_days": 129.5, "mean_gap_days": 219.475, "gap_count": 40, "median_gap_months": 4.2542706964520365}, {"year": 2011, "median_gap_days": 136.5, "mean_gap_days": 191.05263157894737, "gap_count": 38, "median_gap_months": 4.484231274638633}, {"year": 2012, "median_gap_days": 203.5, "mean_gap_days": 211.78571428571428, "gap_count": 42, "median_gap_months": 6.685282522996058}, {"year": 2013, "median_gap_days": 253.0, "mean_gap_days": 229.43589743589743, "gap_count": 39, "median_gap_months": 8.31143232588699}, {"year": 2014, "median_gap_days": 272.0, "mean_gap_days": 249.89473684210526, "gap_count": 38, "median_gap_months": 8.935611038107753}, {"year": 2015, "median_gap_days": 315.0, "mean_gap_days": 310.60526315789474, "gap_count": 38, "median_gap_months": 10.348226018396845}, {"year": 2016, "median_gap_days": 307.5, "mean_gap_days": 329.13157894736844, "gap_count": 38, "median_gap_months": 10.101839684625492}, {"year": 2017, "median_gap_days": 329.0, "mean_gap_days": 380.43243243243245, "gap_count": 37, "median_gap_months": 10.808147174770038}, {"year": 2018, "median_gap_days": 322.0, "mean_gap_days": 342.9375, "gap_count": 32, "median_gap_months": 10.578186596583443}, {"year": 2019, "median_gap_days": 369.0, "mean_gap_days": 485.14285714285717, "gap_count": 35, "median_gap_months": 12.12220762155059}, {"year": 2020, "median_gap_days": 616.5, "mean_gap_days": 565.4230769230769, "gap_count": 26, "median_gap_months": 20.252956636005255}, {"year": 2021, "median_gap_days": 462.0, "mean_gap_days": 518.0384615384615, "gap_count": 26, "median_gap_months": 15.177398160315374}, {"year": 2022, "median_gap_days": 602.0, "mean_gap_days": 580.7241379310345, "gap_count": 29, "median_gap_months": 19.776609724047304}, {"year": 2023, "median_gap_days": 560.0, "mean_gap_days": 512.7058823529412, "gap_count": 17, "median_gap_months": 18.396846254927727}, {"year": 2024, "median_gap_days": 315.0, "mean_gap_days": 312.14285714285717, "gap_count": 14, "median_gap_months": 10.348226018396845}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
