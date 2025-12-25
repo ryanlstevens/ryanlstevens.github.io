@@ -21,7 +21,7 @@ To pinpoint flashback episodes, I used a two-step approach: first, I ran a keywo
 
 So, are flashbacks actually becoming more common? The data says yes, loud and clear. In 2010, about 2% of episodes featured a flashback. By 2025, that's climbed to 8%. The chart below makes the trend hard to miss.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_by_year.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_by_year.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 Why the sudden surge in flashbacks? I have two theories:
 
@@ -34,19 +34,19 @@ Of course, these forces can feed off each other. Studios with a taste for certai
 
 For decades, American TV was ruled by linear networks, the Big 4 (Fox, ABC, NBC, CBS) and the big-name cable channels (think HBO, AMC, Cartoon Network, Comedy Central, and more). From the mid-90s through 2008, about half of top shows aired on the Big 4, with nearly as many on cable. Fast forward to 2025: just 13% of our list comes from the Big 4, and cable's down to 20%.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/network_group_share.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/network_group_share.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 My dataset is not "viewership"; instead, it's a selected list of top shows as voted on by IMDb users, so there is certainly some bias. But a recent Nielsen report from November 2025 puts broadcast TV at 23.2% and cable at 20.5% of viewership, which lines up pretty well with my findings. One reason my numbers are a bit lower: live events (especially sports), where broadcast still calls the shots.
 
-<img src="/posts_images/2025-10-21-movie-analysis/static/nielsen_report_2025.png" alt="Nielsen Report 2025" style="display: block; margin: 0 auto; max-width: 900px; width: 100%;">
+<img src="/posts_images/2025-10-21-movie-analysis/static/nielsen_report_2025.png" alt="Nielsen Report 2025" style="display: block; margin: 0 auto; max-width: 500px; width: 100%;">
 
 Who makes a show matters a lot because flashback rates vary dramatically by network. Below, you'll see flashback rates broken down by network. Streamers are far more likely to serve up a flashback than legacy networks. What's wild is that some streamers (like Hulu) are owned by the legacy players themselves. We'll get into whether it's the studios themselves driving this trend.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_by_network.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_by_network.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 So are the networks themselves changing, or is it just the mix of who's making TV? Around 2015, cable channels started leaning into flashbacks, and streamers went all in. These days, streamers and cable are neck-and-neck in terms of flashback frequency. So, part of the rise is a classic mix shift: streamers and cable have always loved flashbacks, and there's just more of them now.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_rate_by_group.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_rate_by_group.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 ## What TV Gets Made
 
@@ -54,11 +54,11 @@ Who’s making the shows matters, but what’s getting made might matter even mo
 
 The data shows another big shift: the slow death of the comedy. Back in 1995, comedies were nearly half the list, at 44%. By 2025, they're just 6%. Meanwhile, genres like thrillers, drama, and dark comedy have come into the spotlight, accounting for about 35% of shows.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/genre_distribution.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/genre_distribution.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 Can genre changes explain some of the rise in flashbacks? More serious genres (drama, thriller) lend themselves to flashbacks, while less serious ones do not. We can see that very clearly: thrillers are more than twice as likely to have a flashback as a comedy.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_by_genre.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_by_genre.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 ## Using Math to Get an Answer
 
@@ -72,7 +72,7 @@ We decompose the change in flashback rates into three components:
 
 The chart below is a visual breakdown of these different effects. The clear dominating factor is the interaction effect: certain networks and genres are gaining share and becoming more likely to show flashbacks. What's interesting is that the network terms alone have negative effects, meaning it's not simply that people are watching more streamers and that's the sole cause.
 
-<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_decomposition_waterfall.html" width="100%" height="600px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
+<iframe src="../posts_images/2025-10-21-movie-analysis/interactive/flashback_decomposition_waterfall.html" width="100%" height="500px" frameborder="0" style="display: block; margin: 0 auto; max-width: 900px;"></iframe>
 
 # Summing it all up
 
