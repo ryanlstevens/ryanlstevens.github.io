@@ -13,7 +13,9 @@ Rather than just stew about it, I decided to dig into the data. Are flashbacks a
 
 # The Data
 
-I pulled the top 50 shows for each year from IMDb, covering 1995 to 2025, and focused on those airing on US networks or streaming platforms. For every show, I grabbed metadata and episode lists from Wikipedia. Since Wikipedia’s episode descriptions are crowd-sourced and surprisingly detailed, they made a perfect source to hunt for flashbacks.
+The dataset contains 317 shows, with 18,601 episodes with episode-level descriptions. 
+
+To collect the data, I pulled the top 50 shows for each year from [IMDb's open source database](https://developer.imdb.com/documentation/?ref_=header), covering 1995 to 2025, and focused on those airing on US networks or streaming platforms. For every show, I grabbed metadata and episode lists from Wikipedia. Since Wikipedia’s episode descriptions are crowd-sourced and surprisingly detailed, they made a perfect source to hunt for flashbacks.
 
 To pinpoint flashback episodes, I used a two-step approach: first, I ran a keyword search to flag possible candidates. Then, I brought in an LLM (large language model) to separate the true flashbacks from shows simply set in the past. The prompt nudged the LLM to focus on episodes where the action jumps back from the main timeline.
 
