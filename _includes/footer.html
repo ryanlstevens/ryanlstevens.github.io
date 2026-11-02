@@ -16,7 +16,11 @@
             {%- endif -%}
                 <span class="fa-stack fa-lg" aria-hidden="true">
                   <i class="fa fa-circle fa-stack-2x"></i>
+                  {%- if element.svg -%}
+                  <i class="fa fa-stack-1x fa-inverse"><svg class="svg-icon" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="{{ element.svg }}"/></svg></i>
+                  {%- else -%}
                   <i class="fa {{ element.icon }} fa-stack-1x fa-inverse"></i>
+                  {%- endif -%}
                 </span>
                 <span class="sr-only">{{ element.name }}</span>
               </a>
