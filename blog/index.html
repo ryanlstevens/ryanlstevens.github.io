@@ -1,8 +1,20 @@
 ---
 layout: page
-title: Blog
+title: Writing
 subtitle: Random Musings About Code, Economics and Everything In Between
 ---
+
+{% if paginator.page == 1 %}
+<h2>Writing at Ramp</h2>
+<ul class="external-writing">
+  <li><a href="https://ramp.com/data/businesses-are-changing-ai-model-providers-more-often">Businesses are changing AI model providers more often</a><span class="meta">Ramp Economics Lab · Oct 2026</span></li>
+  <li><a href="https://ramp.com/data/am-i-just-a-teck-stack-to-you-how-senior-employees-carry-software-between-firms">Am I just a teck stack to you? How senior employees carry software between firms</a><span class="meta">Ramp Economics Lab · Aug 2026</span></li>
+  <li><a href="https://www.reveliolabs.com/news/ai-and-work/greater-ai-investment-more-hiring">The Companies Spending the Most on AI Are Also Spending the Most on Humans</a><span class="meta">Revelio Labs · with Lisa Simon and Ara Kharazian · Jun 2026</span></li>
+  <li><a href="https://ramp.com/leading-indicators/ai-infrastructure-spending-2026">Inside the rapidly growing, and surprisingly narrow, AI infrastructure market</a><span class="meta">Ramp Leading Indicators · Feb 2026</span></li>
+  <li><a href="https://engineering.ramp.com/post/turbo-ml-configuration-system">Turbo-Charging ML Development</a><span class="meta">Ramp Builders · with Ryne Carbone · Feb 2025</span></li>
+</ul>
+<h2>Personal Posts</h2>
+{% endif %}
 
 <div class="posts-list">
   {% for post in paginator.posts %}
@@ -18,7 +30,7 @@ subtitle: Random Musings About Code, Economics and Everything In Between
     </a>
 
     <p class="post-meta">
-      Posted on {{ post.date | date: site.date_format }}
+      {{ post.date | date: "%b %Y" }}
     </p>
 
 <!--     <div class="post-entry-container">

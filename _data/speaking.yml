@@ -1,0 +1,61 @@
+# Talks, podcasts and panels, newest first.
+# type: talk | keynote | podcast | fireside
+# Optional: youtube (video id), audio (mp3 url), logo_fit: contain (for transparent logos)
+
+- title: "Your AI Is Live. But Is It Actually Working?"
+  type: podcast
+  venue: "Data Analytics Chat with Ben Parker"
+  date: 2026-10-27
+  logo: /img/speaking/dac.jpg
+  link: https://dataanalyticschat.buzzsprout.com/2279127/episodes/20008836-your-ai-is-live-but-is-it-actually-working
+  audio: https://www.buzzsprout.com/2279127/episodes/20008836-your-ai-is-live-but-is-it-actually-working.mp3
+
+- title: "We Gave Our Finance Agent More Context. It Got Worse."
+  type: talk
+  venue: "AI Engineer Summit · New York"
+  date: 2026-10-13
+  date_label: "Oct 2026"
+  logo: /img/speaking/ai-engineer.png
+  link: https://ai.engineer/nyc/2026
+
+- title: "Orchestrating 100 ML Models using Airflow"
+  type: keynote
+  venue: "Airflow Summit · Austin"
+  date: 2026-09-02
+  logo: /img/speaking/airflow.png
+  logo_fit: contain
+  link: https://airflowsummit.org/speakers/ryan-stevens/
+  youtube: bqwHms5f0gg
+
+- title: "AI in Accounting"
+  type: talk
+  venue: "Black Ore AI Tax Summit · Nasdaq, New York"
+  date: 2026-05-21
+  logo: /img/speaking/blackore.jpg
+  link: https://blackore.ai/summit
+
+- title: "How Ramp Scaled Our ML and AI Systems to Support 40K Businesses!"
+  type: podcast
+  venue: "Enginears"
+  date: 2025-07-09
+  logo: /img/speaking/enginears.jpg
+  link: https://podcast.ausha.co/enginears/how-ramp-scaled-our-ml-and-ai-systems-to-support-40k-businesses-enginears-podcast
+  audio: https://audio.ausha.co/B4AlP0hNk3rE.mp3
+
+- title: "From Noisy Alerts to Smart Fixes: AI in Incident Response"
+  type: talk
+  venue: "AI in Production · Asheville"
+  date: 2025-07-18
+  logo: /img/speaking/ai-in-production.png
+  logo_fit: contain
+  link: https://www.aiinproduction.com/2025/speakers/ryan_stevens
+  youtube: KkhuGMly0sg
+
+- title: "The Lifecycle of Machine Learning Systems"
+  type: fireside
+  venue: "Outerbounds · with Hugo Bowne-Anderson"
+  date: 2025-02-19
+  logo: /img/speaking/outerbounds.png
+  logo_fit: contain
+  link: https://luma.com/9zpumkv6
+  youtube: k84gmkeEDNI

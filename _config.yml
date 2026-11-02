@@ -22,7 +22,8 @@ baseurl: ""
 navbar-links:
   About Me: "aboutme"
   Research: "research"
-  Blog: "blog"
+  Speaking: "speaking"
+  Writing: "blog"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -69,7 +70,7 @@ social-network-links:
   email: "ryan.louis.stevens@gmail.com"
   linkedin: ryanstevens3
 #  facebook: deanattali
-  github: ryanlstevens
+  x: ryanlstevens12
 #  twitter: daattali
 #  reddit: yourname
 #  linkedin: daattali

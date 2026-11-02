@@ -1,0 +1,82 @@
+---
+layout: page
+title: Speaking
+subtitle: Talks, podcasts and conversations
+---
+
+{% assign talks = site.data.speaking %}
+{% assign podcast_count = talks | where: "type", "podcast" | size %}
+{% assign talk_count = talks.size | minus: podcast_count %}
+{% assign type_labels = "talk:Talk,keynote:Keynote,podcast:Podcast,fireside:Fireside chat" | split: "," %}
+
+<div class="speaking-filters" role="group" aria-label="Filter by type">
+  <button type="button" data-filter="all" aria-pressed="true">All<span class="count">{{ talks.size }}</span></button>
+  <button type="button" data-filter="stage" aria-pressed="false">Talks<span class="count">{{ talk_count }}</span></button>
+  <button type="button" data-filter="podcast" aria-pressed="false">Podcasts<span class="count">{{ podcast_count }}</span></button>
+</div>
+
+{% assign current_year = "" %}
+{% for t in talks %}
+  {% assign year = t.date | date: "%Y" %}
+  {% if year != current_year %}
+    {% assign current_year = year %}
+<h2 class="speaking-year" data-year="{{ year }}">{{ year }}</h2>
+  {% endif %}
+  {% assign type_label = t.type %}
+  {% for pair in type_labels %}
+    {% assign kv = pair | split: ":" %}
+    {% if kv[0] == t.type %}{% assign type_label = kv[1] %}{% endif %}
+  {% endfor %}
+<article class="talk-card" data-type="{% if t.type == 'podcast' %}podcast{% else %}stage{% endif %}" data-year="{{ year }}">
+  <div class="talk-logo{% if t.logo_fit == 'contain' %} contain{% endif %}">
+    <img src="{{ t.logo | relative_url }}" alt="" loading="lazy">
+  </div>
+  <div class="talk-body">
+    <div class="talk-meta">
+      <span class="talk-type {{ t.type }}">{{ type_label }}</span>
+      <span>{% if t.date_label %}{{ t.date_label }}{% else %}{{ t.date | date: "%b %-d, %Y" }}{% endif %}</span>
+    </div>
+    <h3 class="talk-title"><a href="{{ t.link }}">{{ t.title }}</a></h3>
+    <p class="talk-venue">{{ t.venue }}</p>
+    {% if t.youtube %}
+    <div class="talk-video">
+      <button type="button" data-youtube="{{ t.youtube }}" aria-label="Play video: {{ t.title }}" style="background-image: url('https://i.ytimg.com/vi/{{ t.youtube }}/hqdefault.jpg')">
+        <span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
+      </button>
+    </div>
+    {% endif %}
+    {% if t.audio %}
+    <audio controls preload="none" src="{{ t.audio }}"></audio>
+    {% endif %}
+  </div>
+</article>
+{% endfor %}
+
+<script>
+  // Swap a video thumbnail for the real player only when clicked.
+  document.querySelectorAll('.talk-video button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.youtube + '?autoplay=1&rel=0';
+      iframe.title = btn.getAttribute('aria-label');
+      iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      btn.replaceWith(iframe);
+    });
+  });
+
+  // Filter chips: show all, stage talks, or podcasts, and hide years left empty.
+  var filterButtons = document.querySelectorAll('.speaking-filters button');
+  filterButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.dataset.filter;
+      filterButtons.forEach(function(b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      document.querySelectorAll('.talk-card').forEach(function(card) {
+        card.hidden = filter !== 'all' && card.dataset.type !== filter;
+      });
+      document.querySelectorAll('.speaking-year').forEach(function(h) {
+        h.hidden = !document.querySelector('.talk-card[data-year="' + h.dataset.year + '"]:not([hidden])');
+      });
+    });
+  });
+</script>
